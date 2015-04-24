@@ -353,7 +353,6 @@ h3 {
 }
 
 h4 {
-  font-size:0.9em;
   color: #B94A48;
 }
 
