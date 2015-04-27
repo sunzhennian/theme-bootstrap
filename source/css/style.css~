@@ -599,7 +599,7 @@ td {
 	width:13%;
 	position:fixed;
 	right:10px;
-	top:210px;
+	top:200px;
 	overflow:hidden;
 	line-height:1.5em;
 	font-size:1em;

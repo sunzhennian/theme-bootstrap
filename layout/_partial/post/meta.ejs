@@ -1,5 +1,17 @@
-<div class="col-md-3"> 
-
+<div class="openaside"><a class="navbutton" href="#" title="<%= __('showsidebar') %>"></a></div>
+<% if( (item.toc !== false) && theme.toc.aside){ %>
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title"><%= __('contents') %></strong>
+ <% if(item.list_number == false) {%>
+ <%- toc(item.content,{list_number:false}) %>
+ <% }else{ %>
+ <%- toc(item.content) %>
+ <% } %>
+  </div>
+<% } %>
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="<%= __('hidesidebar') %>"></a></div>
+<aside class="clearfix">
 	<!-- date -->
 	<% if (item.date) { %>
 	<div class="meta-widget">
@@ -27,17 +39,9 @@
     </ul>
 	</div>
 	<% } %>	
+<% theme.widgets.forEach(function(widget){ %>
+  <%- partial('../_widget/' + widget) %>
+<% }); %>
+</aside>
+</div>
 
-	<!-- toc -->
-	<div class="meta-widget">
-	<% if(item.toc){ %>
-	   <a data-toggle="collapse" data-target="#toc"><i class="fa fa-bars"></i></a>
-	   <div id="toc" class="toc collapse in">
-			<%- toc(item.content, {class: "toc-article", list_number:false}) %>
-		</div>
-	<% } %>
-	</div>
-	
-    <hr>
-	
-</div><!-- col-md-3 -->
